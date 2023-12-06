@@ -4,8 +4,10 @@ def square_matrix_simple(matrix=[]):
     if not matrix:
         return []
 
-    return [[x ** 2 for x in row] for row in matrix]
+    # Using map and lambda to create a new matrix with squared values
+    return [list(map(lambda x: x ** 2, row)) for row in matrix]
 
+# Test the function
 if __name__ == "__main__":
     matrix = [
         [1, 2, 3],
