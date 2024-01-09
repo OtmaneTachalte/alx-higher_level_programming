@@ -1,18 +1,17 @@
-#!/usr/bin/python3
-"""0x0B. Python - Input/Output, task 9. Load, add, save  """
+i#!/usr/bin/python3
+"""This module defines a class Student"""
 
 
-from sys import argv
-save_to_json_file = __import__('7-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
+class Student:
+    """Represent a student."""
 
-argv_edit = argv[1:]
+    def __init__(self, first_name, last_name, age):
+        """Initializes a new Student
+        """
+        self.first_name = first_name
+        self.last_name = last_name
+        self.age = age
 
-try:
-    content_list = load_from_json_file("add_item.json")
-except:
-    content_list = []
-finally:
-    for arg in argv_edit:
-        content_list.append(arg)
-    save_to_json_file(content_list, "add_item.json")
+    def to_json(self):
+        """Gets a dictionary representation of the Student"""
+        return self.__dict__
